@@ -42,20 +42,29 @@ header {
 }
 
 /* Shapes */
-/* Why on earth is there margin on the right */
-.square, .circle {
+/* Must have capital letter to match input from oprions */
+.Square, .Circle {
   border: 1px solid black;
   height: 200px;
   width: 200px;
 }
 
-.square {
+.Square {
   border-radius: 5px;
 }
 
-.circle {
+.Circle {
   border-radius: 50%;
 }
+
+/* Colours */
+
+.Blue { background-color: #09f; }
+.Green { background-color: #9f0; }
+.Orange { background-color: #f90; }
+.Pink { background-color: #f09; }
+.Purple { background-color: #90f; }
+
 
 /* Log */
 

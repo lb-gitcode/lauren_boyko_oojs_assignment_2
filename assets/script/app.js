@@ -15,11 +15,21 @@ let createButton = getElement('createButton');
 let logText = getElement('log-text');
 let gridContainer = getElement('grid-container');
 
+let shapeSelect = getElement('shapeSelect');
+let selectCircle = getElement('selectCircle');
+let selectSquare = getElement('selectSquare');
+
+let colourSelect = getElement('colourSelect');
+let selectBlue = getElement('selectBlue');
+let selectGreen = getElement('selectGreen');
+let selectOrange = getElement('selectOrange');
+let selectPink = getElement('selectPink');
+let selectPurple = getElement('selectPurple');
+
 let square = getElement('square');
 let circle = getElement('circle');
 
 // shapes
-
 class Shape {
   constructor (name, colour) {
     this.name = name;
@@ -34,20 +44,23 @@ class Shape {
 let createdShapes = [];
 
 // creating
-
 let spaceForMore = true;
 
 const createShape = () => {
   if (createdShapes.length <= 19) {
-    let newShape = new Shape();
+    let selectedShape = shapeSelect.value;
+    let selectedColour = colourSelect.value;
+    let newShape = new Shape(selectedShape, selectedColour);
     createdShapes.push(newShape);
-    gridContainer.innerHTML += `<div class='square'></<div>`;
+    console.log(newShape.name);
+    gridContainer.innerHTML += `<div class='${newShape.name} ${newShape.colour}'></<div>`;
+    console.log(shapeSelect.value);
     logText.textContent = "New shape created";
     console.log(`New shape created.`);
     console.log(createdShapes);
   } else {
     logText.textContent = "Too many shapes!";
-    console.log('too many shapes!');
+    console.log('Too many shapes!');
     spaceForMore = false;
   }
 }
