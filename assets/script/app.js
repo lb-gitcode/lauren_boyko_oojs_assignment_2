@@ -52,11 +52,10 @@ const createShape = () => {
     let selectedColour = colourSelect.value;
     let newShape = new Shape(selectedShape, selectedColour);
     createdShapes.push(newShape);
-    console.log(newShape.name);
-    gridContainer.innerHTML += `<div class='${newShape.name} ${newShape.colour}'></<div>`;
-    console.log(shapeSelect.value);
+    gridContainer.innerHTML += `<div class='.shape ${newShape.name} ${newShape.colour}'></<div>`;
     logText.textContent = "New shape created";
     console.log(`New shape created.`);
+    // listen('click', newShape, Shape.getInfo);
     console.log(createdShapes);
   } else {
     logText.textContent = "Too many shapes!";
@@ -66,3 +65,9 @@ const createShape = () => {
 }
 
 listen('click', createButton, createShape);
+
+// get info
+
+
+
+// listen('click', shapes, Shape.getInfo);
