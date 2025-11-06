@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="LB">
+    <meta name="description" content="School assignment">
+    <meta name="keywords" content="html, css, web, web development, javascript">
+    <link rel="icon" href="./assets/media/favicon.png?v=2" type="image/x-icon">
+    <link rel="stylesheet" href="./assets/style/index.css" media="all">
+    <script src="./assets/script/app.js" defer></script>
+    <!-- Links for fonts -->
+    <title>Shape Factory</title>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Shape Factory</h1>
+      </header>
+      <main>
+        <div>
+          <div class="options">  
+            <select id="shapeSelect">
+              <option id="selectCircle">Circle</option>
+              <option id="selectSquare">Square</option>
+            </select>
+            <select id="colourSelect">
+              <option id="selectBlue">Blue</option>
+              <option id="selectGreen">Green</option>
+              <option id="selectOrange">Orange</option>
+              <option id="selectPink">Pink</option>
+              <option id="selectPurple">Purple</option>
+            </select>
+            <input type="button" value="Create" id="createButton">
+          </div>
+          <div id="grid-container">
+          </div>
+          <div class="log">
+            <p id="log-text"></p>
+          </div>
+        </div>
+      </main>
+    </div>
+    <noscript>
+      <p>This page requires a JavaScript-enabled browser.</p>
+    </noscript>
+  </body>
+</html>

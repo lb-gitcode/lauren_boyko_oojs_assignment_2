@@ -1,0 +1,81 @@
+@charset "utf-8";
+@import './reset.css';
+
+/* Formatting */
+
+.container {
+  width: min(100svh - 30px, 1080px);
+  margin-inline: auto;
+}
+
+* { transition: 0.25s ease-in-out; }
+
+/* Border */
+
+.options, #grid-container, .log { border: 1px solid black; }
+
+/* Header */
+
+header {
+  text-align: center;
+  margin: 10px;
+}
+
+/* Options */
+
+.options {
+  height: 70px;
+  padding: 20px;
+  display: flex;
+  justify-content: space-evenly;
+  margin: 20px 0;
+}
+
+/* Grid */
+
+#grid-container {
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-auto-rows: minmax(200px, auto);
+  grid-row-gap: 5px;
+}
+
+/* Shapes */
+/* Why on earth is there margin on the right */
+.square, .circle {
+  border: 1px solid black;
+  height: 200px;
+  width: 200px;
+}
+
+.square {
+  border-radius: 5px;
+}
+
+.circle {
+  border-radius: 50%;
+}
+
+/* Log */
+
+.log {
+  height: 70px;
+  margin-top: 20px;
+  line-height: 70px;
+  text-align: center;
+}
+
+/* Responsiveness */
+/*
+@media (max-width: 1120px) {
+  .grid-container {
+    grid-auto-rows: minmax(150px, auto);
+    grid-gap: 6px;
+  }
+  .square, .circle {
+    height: 180px;
+    width: 180px;
+  }
+}
+*/
