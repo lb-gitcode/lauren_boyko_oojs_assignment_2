@@ -10,7 +10,6 @@ function selectAll(selector, scope = document) { return [...scope.querySelectorA
 function listen(event, selector, callback) { return selector.addEventListener(event, callback); }
 
 // getting elements
-
 let createButton = getElement('createButton');
 let logText = getElement('log-text');
 let gridContainer = getElement('grid-container');
@@ -92,7 +91,6 @@ function emptyArray(array) {
 }
 
 // get info
-
 function shapeInfo() {
   if(event.target.id === 'shape') {
     let clickedShape = event.target;
