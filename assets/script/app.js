@@ -94,7 +94,13 @@ function emptyArray(array) {
 function shapeInfo() {
   if(event.target.id === 'shape') {
     let clickedShape = event.target;
-    let clickedIndex = clickedShape.innerHTML[0];
+    let clickedIndex = '';
+    clickedIndex += clickedShape.innerHTML[0];
+    console.log(clickedShape.innerHTML.length);
+    if (clickedShape.innerHTML.length > 12) {
+      clickedIndex += clickedShape.innerHTML[1];
+    }
+    console.log(clickedIndex);
     let foundShape = shapeConnect(clickedIndex, createdShapes);
     logText.textContent = foundShape.getInfo();
     console.log(foundShape.getInfo());
@@ -104,6 +110,7 @@ function shapeInfo() {
 function shapeConnect(clickedNum, array) {
   for (let index in array) {
     if (index === clickedNum) {
+      console.log(index);
       return array[index];
     }
   }
