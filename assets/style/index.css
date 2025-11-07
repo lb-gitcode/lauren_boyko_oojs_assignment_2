@@ -81,6 +81,10 @@ input {
   border-radius: 50%;
 }
 
+#shape {
+  color: rgba(0, 0, 0, 0);
+}
+
 /* Colours */
 
 .Blue { background-color: #09f; }
@@ -100,6 +104,7 @@ input {
 }
 
 /* Responsiveness */
+
 /*
 @media (max-width: 1120px) {
   .grid-container {
