@@ -90,14 +90,14 @@ function emptyArray(array) {
   }
 }
 
-// get info NEEDS ATTENTION:
+// get info
 function shapeInfo() {
   if(event.target.id === 'shape') {
     let clickedShape = event.target;
     let clickedIndex = '';
     clickedIndex += clickedShape.innerHTML[0];
-    console.log(clickedShape.innerHTML);
-    if (createdShapes.length > 9) {
+    console.log(clickedShape.innerHTML.length);
+    if (clickedShape.innerHTML.length > 12) {
       clickedIndex += clickedShape.innerHTML[1];
     }
     console.log(clickedIndex);
