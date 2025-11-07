@@ -39,7 +39,7 @@ class Shape {
   set colour(value) { this._colour = value; }
   get colour() { return this._colour; }
 
-  getInfo() { return `This shape is a ${this.colour} ${this.name}.`; }
+  getInfo() { return `This shape is a ${this._colour.toLowerCase()} ${this._name.toLowerCase()}.`; }
 }
 
 let createdShapes = [];
@@ -108,14 +108,21 @@ function emptyArray(array) {
 
 function shapeInfo() {
   if(event.target.id === 'shape') {
-    logText.textContent = "Click registered!";
-    console.log('You sure clicked!');
+    let clickedShape = event.target;
+    let clickedIndex = clickedShape.innerHTML[0];
+    let foundShape = shapeConnect(clickedIndex, createdShapes);
+    logText.textContent = foundShape.getInfo();
+    console.log(foundShape.getInfo());
   }
   
 }
 
-function shapeConnect() {
-
+function shapeConnect(clickedNum, array) {
+  for (let index in array) {
+    if (index === clickedNum) {
+      return array[index];
+    }
+  }
 }
 
 listen('click', gridContainer, shapeInfo);

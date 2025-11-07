@@ -83,6 +83,7 @@ input {
 
 #shape {
   color: rgba(0, 0, 0, 0);
+  user-select: none;
 }
 
 /* Colours */
