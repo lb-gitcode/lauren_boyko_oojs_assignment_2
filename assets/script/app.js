@@ -1,5 +1,5 @@
 'use strict';
-// import { getElement, listen } from './utils.js';
+// import {getElement, listen} from './utils.js';
 // imports not working, make sure to ask teacher
 function getElement(selector, scope = document) { return scope.getElementById(selector); }
 // select HTML element 
@@ -34,7 +34,6 @@ class Shape {
 let createdShapes = [];
 
 // creating
-let spaceForMore = true;
 let shapes = getElement('shape');
 let shapeIndex = 0;
 
@@ -54,7 +53,7 @@ const createShape = () => {
 }
 
 function checkShape() {
-  if (createButton.value === "Create" && spaceForMore === true) {
+  if (createButton.value === "Create") {
     createShape();
   } else if (createButton.value === "Reset") {
     logText.textContent = "Too many shapes! Resetting!";
@@ -79,7 +78,6 @@ function resetShapes() {
   emptyArray(createdShapes);
   createButton.value = "Create";
   shapeIndex = 0;
-  spaceForMore = true;
   console.log(createdShapes);
 }
 
