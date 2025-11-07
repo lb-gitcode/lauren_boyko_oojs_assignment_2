@@ -10,9 +10,16 @@
 
 * { transition: 0.25s ease-in-out; }
 
-/* Border */
+/* Borders and colours */
 
-.options, #grid-container, .log { border: 1px solid black; }
+h1 { color: white }
+
+body { background-color: rgb(41, 41, 41); }
+
+.options, #grid-container, .log { 
+  background-color: rgb(122, 122, 122);
+  border: 1px solid black; 
+}
 
 /* Header */
 
@@ -25,10 +32,28 @@ header {
 
 .options {
   height: 70px;
-  padding: 20px;
+  padding: 10px;
   display: flex;
   justify-content: space-evenly;
   margin: 20px 0;
+}
+
+select, input { 
+  font-weight: 500;
+  height: 50px;
+  width: 90px;
+  text-align: center;
+ }
+
+select {
+  padding: 5px;
+  line-height: 50px;
+  border-radius: 5px;
+}
+
+input {
+  padding: 10px;
+  border-radius: 10px;
 }
 
 /* Grid */
@@ -42,9 +67,8 @@ header {
 }
 
 /* Shapes */
-/* Must have capital letter to match input from oprions */
+/* Must have capital letter to match input from options */
 .Square, .Circle {
-  border: 1px solid black;
   height: 200px;
   width: 200px;
 }

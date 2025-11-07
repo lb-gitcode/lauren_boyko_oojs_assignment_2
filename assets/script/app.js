@@ -31,9 +31,22 @@ let circle = getElement('circle');
 
 // shapes
 class Shape {
-  constructor (name, colour) {
-    this.name = name;
-    this.colour = colour;
+  _name;
+  set name(value) {
+    this._name = value;
+  }
+
+  get name() {
+    return this._name;
+  }
+
+  _colour;
+  set colour(value) {
+    this._colour = value;
+  }
+
+  get colour() {
+    return this._colour;
   }
 
   getInfo() {
@@ -45,29 +58,77 @@ let createdShapes = [];
 
 // creating
 let spaceForMore = true;
+let shapes = selectAll('shape');
+let shapeIndex = 0;
 
 const createShape = () => {
-  if (createdShapes.length <= 19) {
-    let selectedShape = shapeSelect.value;
-    let selectedColour = colourSelect.value;
-    let newShape = new Shape(selectedShape, selectedColour);
-    createdShapes.push(newShape);
-    gridContainer.innerHTML += `<div class='.shape ${newShape.name} ${newShape.colour}'></<div>`;
-    logText.textContent = "New shape created";
-    console.log(`New shape created.`);
-    // listen('click', newShape, Shape.getInfo);
-    console.log(createdShapes);
-  } else {
+  console.log(verifyShapes(createdShapes));
+  let selectedShape = shapeSelect.value;
+  let selectedColour = colourSelect.value;
+  let newShape = new Shape();
+  newShape.name = selectedShape;
+  newShape.colour = selectedColour;
+  createdShapes.push(newShape);
+  gridContainer.innerHTML += `<div class='.shape ${newShape.name} ${newShape.colour} ${shapeIndex}'></<div>`;
+  logText.textContent = `New ${newShape.colour.toLowerCase()} ${newShape.name.toLowerCase()} created.`;
+  console.log(`New ${newShape.colour.toLowerCase()} ${newShape.name.toLowerCase()} created.`);
+  shapeIndex++;
+  console.log(createdShapes);
+  // if (verifyShapes(createdShapes) === true) {
+    
+  // } else {
+  //   logText.textContent = "Too many shapes!";
+  //   console.log('Too many shapes!');
+  //   createButton.value = "Reset";
+  //   listen('click', createButton, resetShapes);
+}
+
+function checkShape() {
+  if (createButton.value === "Create") {
+    createShape();
+  } else if (createButton.value === "Reset") {
     logText.textContent = "Too many shapes!";
     console.log('Too many shapes!');
-    spaceForMore = false;
+    resetShapes();
   }
 }
 
-listen('click', createButton, createShape);
+listen('click', createButton, checkShape);
+
+function verifyShapes(array) {
+  if (array.length >= 19) {
+    createButton.value = "Reset";
+    return false;
+  } else {
+    return true;
+  }
+}
+
+function resetShapes() {
+  emptyBox(gridContainer);
+  emptyArray(createdShapes);
+  createButton.value = "Create";
+  spaceForMore = true;
+   console.log(createdShapes);
+}
+
+function emptyBox(box) {
+  for (let i = 0; i < createdShapes.length; i++) {
+    box.removeChild(box.firstChild);
+  }
+}
+
+function emptyArray(array) {
+  for (let i = 0; i <= 19; i++) {
+    array.pop();
+  }
+  console.log(array);
+}
 
 // get info
 
+function shapeConnect() {
 
+}
 
 // listen('click', shapes, Shape.getInfo);
