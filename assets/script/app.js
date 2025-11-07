@@ -16,18 +16,7 @@ let logText = getElement('log-text');
 let gridContainer = getElement('grid-container');
 
 let shapeSelect = getElement('shapeSelect');
-let selectCircle = getElement('selectCircle');
-let selectSquare = getElement('selectSquare');
-
 let colourSelect = getElement('colourSelect');
-let selectBlue = getElement('selectBlue');
-let selectGreen = getElement('selectGreen');
-let selectOrange = getElement('selectOrange');
-let selectPink = getElement('selectPink');
-let selectPurple = getElement('selectPurple');
-
-let square = getElement('square');
-let circle = getElement('circle');
 
 // shapes
 class Shape {
@@ -114,7 +103,6 @@ function shapeInfo() {
     logText.textContent = foundShape.getInfo();
     console.log(foundShape.getInfo());
   }
-  
 }
 
 function shapeConnect(clickedNum, array) {
