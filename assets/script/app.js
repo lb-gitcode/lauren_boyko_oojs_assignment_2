@@ -84,7 +84,7 @@ const createShape = () => {
 }
 
 function checkShape() {
-  if (createButton.value === "Create") {
+  if (createButton.value === "Create" && spaceForMore === true) {
     createShape();
   } else if (createButton.value === "Reset") {
     logText.textContent = "Too many shapes!";
@@ -108,18 +108,24 @@ function resetShapes() {
   emptyBox(gridContainer);
   emptyArray(createdShapes);
   createButton.value = "Create";
+  shapeIndex = 0;
   spaceForMore = true;
-   console.log(createdShapes);
+  console.log(createdShapes);
 }
 
 function emptyBox(box) {
-  for (let i = 0; i < createdShapes.length; i++) {
-    box.removeChild(box.firstChild);
+  /*
+  if (createdShapes.length > 0) {
+    for (let i = 0; i < createdShapes.length + 1; i++) {
+      box.removeChild(box.firstChild);
+    }
   }
+  */
+   gridContainer.innerHTML = "";
 }
 
 function emptyArray(array) {
-  for (let i = 0; i <= 19; i++) {
+  for (let i = 0; i <= 20; i++) {
     array.pop();
   }
   console.log(array);
