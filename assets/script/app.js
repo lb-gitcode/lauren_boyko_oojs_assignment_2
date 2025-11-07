@@ -37,7 +37,6 @@ let shapes = getElement('shape');
 let shapeIndex = 0;
 
 const createShape = () => {
-  console.log(verifyShapes(createdShapes));
   let selectedShape = shapeSelect.value;
   let selectedColour = colourSelect.value;
   let newShape = new Shape();
@@ -48,7 +47,6 @@ const createShape = () => {
   logText.textContent = `New ${newShape.colour.toLowerCase()} ${newShape.name.toLowerCase()} created.`;
   console.log(`New ${newShape.colour.toLowerCase()} ${newShape.name.toLowerCase()} created.`);
   shapeIndex++;
-  console.log(createdShapes);
 }
 
 function checkShape() {
@@ -77,7 +75,6 @@ function resetShapes() {
   emptyArray(createdShapes);
   createButton.value = "Create";
   shapeIndex = 0;
-  console.log(createdShapes);
 }
 
 function emptyBox() {
@@ -96,11 +93,9 @@ function shapeInfo() {
     let clickedShape = event.target;
     let clickedIndex = '';
     clickedIndex += clickedShape.innerHTML[0];
-    console.log(clickedShape.innerHTML.length);
     if (clickedShape.innerHTML.length > 12) {
       clickedIndex += clickedShape.innerHTML[1];
     }
-    console.log(clickedIndex);
     let foundShape = shapeConnect(clickedIndex, createdShapes);
     logText.textContent = foundShape.getInfo();
     console.log(foundShape.getInfo());
@@ -110,7 +105,6 @@ function shapeInfo() {
 function shapeConnect(clickedNum, array) {
   for (let index in array) {
     if (index === clickedNum) {
-      console.log(index);
       return array[index];
     }
   }
