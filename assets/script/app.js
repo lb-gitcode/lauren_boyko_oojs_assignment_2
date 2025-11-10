@@ -43,6 +43,7 @@ const createShape = () => {
   newShape.name = selectedShape;
   newShape.colour = selectedColour;
   createdShapes.push(newShape);
+  console.log(createdShapes);
   gridContainer.innerHTML += `<div id='shape' class='${newShape.name} ${newShape.colour}'>${shapeIndex}</<div>`;
   logText.textContent = `New ${newShape.colour.toLowerCase()} ${newShape.name.toLowerCase()} created.`;
   console.log(`New ${newShape.colour.toLowerCase()} ${newShape.name.toLowerCase()} created.`);
@@ -57,12 +58,13 @@ function checkShape() {
     console.log('Too many shapes!');
     resetShapes();
   }
+  verifyShapes(createdShapes);
 }
 
 listen('click', createButton, checkShape);
 
 function verifyShapes(array) {
-  if (array.length >= 19) {
+  if (array.length >= 20) {
     createButton.value = "Reset";
     return false;
   } else {
